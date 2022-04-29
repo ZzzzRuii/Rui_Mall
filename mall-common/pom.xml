@@ -60,10 +60,29 @@
             <scope>provided</scope>
         </dependency>
 
-        <!--        服务注册发现依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+
+        <!--        服务注册/发现依赖-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <!--        配置中心/配置管理依赖-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!--        由于springboot的版本问题不会自动读取bootstrap.properties文件中的配置，
+        引入spring-cloud-starter-bootstrap依赖进行读取-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+            <version>3.1.1</version>
         </dependency>
 
     </dependencies>
