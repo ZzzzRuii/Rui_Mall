@@ -10,7 +10,7 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
   application:
-    name: mall-product
+    name: mall-third-party
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
@@ -19,6 +19,5 @@ mybatis-plus:
       id-type: auto
       logic-delete-value: 1
       logic-not-delete-value: 0
-
 server:
-  port: 10000
+  port: 30000
