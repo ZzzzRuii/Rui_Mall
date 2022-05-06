@@ -19,5 +19,6 @@ buildNumber.properties
 **/target/
 
 .idea/
+renren-generator/
 
 **/.gitignore
