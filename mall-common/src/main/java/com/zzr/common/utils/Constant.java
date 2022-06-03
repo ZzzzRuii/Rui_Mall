@@ -8,9 +8,9 @@
 
 package com.zzr.common.utils;
 
-import com.zzr.common.validator.group.AliyunGroup;
-import com.zzr.common.validator.group.QcloudGroup;
-import com.zzr.common.validator.group.QiniuGroup;
+import com.zzr.common.valid.group.AliyunGroup;
+import com.zzr.common.valid.group.QcloudGroup;
+import com.zzr.common.valid.group.QiniuGroup;
 
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -132,20 +132,20 @@ public class Constant {
             this.validatorGroupClass = validatorGroupClass;
         }
 
-        public int getValue() {
-            return value;
-        }
-
-        public Class<?> getValidatorGroupClass() {
-            return this.validatorGroupClass;
-        }
-
         public static CloudService getByValue(Integer value) {
             Optional<CloudService> first = Stream.of(CloudService.values()).filter(cs -> value.equals(cs.value)).findFirst();
             if (!first.isPresent()) {
                 throw new IllegalArgumentException("非法的枚举值:" + value);
             }
             return first.get();
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        public Class<?> getValidatorGroupClass() {
+            return this.validatorGroupClass;
         }
     }
 

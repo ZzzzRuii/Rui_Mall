@@ -4,11 +4,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.zzr.common.utils.PageUtils;
 import com.zzr.ware.entity.PurchaseDetailEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
- * 
- *
  * @author zhouzhirui
  * @email zzr2635373196@icloud.com
  * @date 2022-04-28 16:35:17
@@ -16,5 +15,7 @@ import java.util.Map;
 public interface PurchaseDetailService extends IService<PurchaseDetailEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    List<PurchaseDetailEntity> listDetailByPurchaseId(Long id);
 }
 

@@ -3,17 +3,32 @@ package com.zzr.product;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zzr.product.entity.BrandEntity;
 import com.zzr.product.service.BrandService;
+import com.zzr.product.service.CategoryService;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.List;
 
+@Slf4j
 @SpringBootTest
 class MallProductApplicationTests {
 
     @Autowired
     BrandService brandService;
+
+    @Resource
+    CategoryService categoryService;
+
+    @Test
+    public void testFindPath() {
+        Long[] catelogPath = categoryService.findCatelogPath(225L);
+        log.info("完整路径：{}", Arrays.asList(catelogPath));
+    }
+
 
 //    @Resource
 //    OSSClient ossClient;

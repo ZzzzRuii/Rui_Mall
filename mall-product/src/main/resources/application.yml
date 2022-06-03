@@ -11,6 +11,12 @@ spring:
         server-addr: 127.0.0.1:8848
   application:
     name: mall-product
+  main:
+    allow-circular-references: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
@@ -22,3 +28,7 @@ mybatis-plus:
 
 server:
   port: 10000
+
+logging:
+  level:
+    com.zzr: debug
