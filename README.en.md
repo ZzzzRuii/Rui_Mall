@@ -1,7 +1,7 @@
 # mall
 
 #### Description
-商城
+商城项目
 
 #### Software Architecture
 Software architecture description
